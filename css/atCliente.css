@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+
+/* --- CONFIGURACIÓN BASE (Ajuste a 10px) --- */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+:root {
+    --brand-purple: #512da8;
+    --brand-purple-hover: #311b92;
+    --brand-orange: #ff6d00;
+}
+
+/* --- ESTILOS PARA MÓVILES (BASE) --- */
+.ayuda_cont {
+    width: 100%;
+    max-width: 120rem; /* 1200px máximo para mejor visibilidad en escritorio */
+}
+
+b {
+  font-family: "Elsie", serif;
+}
+
+/* --- NAVBAR --- */
+.nav {
+  background-color: #0e0653 !important; 
+  border-bottom: 0.1rem solid #ffffff;
+  font-size: 1.6rem; 
+}
+
+.nav .navbar-brand {         
+  font-size: 2rem; 
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav .nav-link {
+  font-size: 1.6rem; 
+}
+
+.nav .btn {
+  font-size: 1.4rem; 
+  padding: 0.4rem 0.8rem;
+}
+
+/* Tipografías escaladas a un tamaño más cómodo y visible */
+.title-main { font-size: 2.6rem; }       /* ~26px */
+.subtitulo { font-size: 2.2rem; }   /* ~22px */
+.text-faq { font-size: 1.5rem; }        /* ~15px */
+.card_text { font-size: 1.6rem; } /* ~16px */
+.card_desc { font-size: 1.3rem; color: #777; line-height: 1.4; } /* ~13px */
+.text-contact-p { font-size: 1.4rem; }   /* ~14px */
+.small-text { font-size: 1.2rem; }       /* ~12px */
+.text-badge { font-size: 1.2rem; padding: 0.4rem 0.8rem; }
+.text-banner-strong { font-size: 1.5rem; }
+.text-banner-p { font-size: 1.4rem; }
+.text-btn-banner { font-size: 1.4rem; }
+.text-social-title { font-size: 1.5rem; }
+.text-footer-retail { font-size: 1.4rem; }
+
+/* --- COMPONENTES Y ANIMACIONES --- */
+.custom-input {
+    font-size: 1.5rem;
+    padding: 1.2rem 1.8rem;
+    border-radius: 0.8rem 0 0 0.8rem !important;
+}
+.custom-input:focus {
+    border-color: var(--brand-purple);
+    box-shadow: 0 0 0.8rem rgba(81, 45, 168, 0.2);
+}
+
+.btn-search {
+    background-color: var(--brand-purple);
+    color: white;
+    border-radius: 0 0.8rem 0.8rem 0 !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0 3rem;
+    transition: all 0.3s ease;
+}
+.btn-search:hover {
+    background-color: var(--brand-purple-hover);
+    color: white;
+    transform: translateY(-0.2rem);
+}
+
+/* Items FAQ (Preguntas) */
+.preguntas {
+    border: 0.15rem solid #eaeaea;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.preguntas:hover {
+    border-color: #b3b3b3;
+    transform: translateX(0.5rem);
+    background-color: #fafafa;
+}
+.preguntas i {
+    font-size: 1.6rem; 
+    transition: color 0.3s, transform 0.3s;
+}
+.preguntas:hover i {
+    color: var(--brand-purple) !important;
+    transform: rotate(15deg);
+}
+
+/* Tarjetas Categoría */
+.card_cat {
+    border: 0.15rem solid transparent;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.card_cat:hover {
+    transform: translateY(-0.8rem);
+    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.08);
+    border-color: #d1d1d1;
+}
+.card_icon {
+    font-size: 3.6rem; 
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orange-bg {
+    color: var(--brand-orange);
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+/* Tarjetas Contacto */
+.contac_espacio {
+    border: 0.15rem solid #eaeaea;
+    border-radius: 1.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+.contac_espacio:hover {
+    box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.06);
+    border-color: #c5c5c5;
+}
+.contac_icon {
+    font-size: 3.2rem;
+}
+.link {
+    color: var(--brand-purple);
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Banner Interactivo */
+.bg-orange { background-color: var(--brand-orange); }
+.text-orange { color: var(--brand-orange); }
+.btn-banner {
+    background-color: var(--brand-purple);
+    color: white;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+.btn-banner:hover {
+    background-color: #6200ea;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Redes Sociales */
+.boton_redes {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #555;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1rem 2.2rem;
+    border: 0.15rem solid #e0e0e0;
+    border-radius: 3.5rem;
+    transition: all 0.2s ease;
+}
+.boton_redes:hover {
+    background-color: #f8f9fa;
+    color: var(--brand-purple);
+    border-color: var(--brand-purple);
+    transform: translateY(-0.3rem);
+}
+.title_redes { letter-spacing: 0.15rem; }
+.hover-underline:hover { text-decoration: underline !important; }
+
+/* ============================================================
+   ESTILOS COMPLEMENTARIOS PARA EL CARRITO LATERAL (SIDE CART)
+   ============================================================ */
+.cart_overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.4rem);
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.cart_overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart_sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 45rem;
+  background-color: #ffffff;
+  color: #151515;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .cart_sidebar {
+    width: 33.333vw; /* Toma un tercio exacto de la pantalla horizontal */
+    min-width: 40rem;
+  }
+}
+
+.cart_sidebar.active {
+  transform: translateX(0);
+}
+
+.cart_header {
+  padding: 2rem;
+  border-bottom: 0.1rem solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart_header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+.cart_close_btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #777777;
+  line-height: 1;
+}
+.cart_close_btn:hover {
+  color: #f03939;
+}
+
+.cart_body {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.cart_vacio_text {
+  font-size: 1.5rem;
+  color: #777777;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.cart_footer {
+  padding: 2rem;
+  border-top: 0.1rem solid #e5e5e5;
+  background-color: #fbfbfb;
+}
+.cart_total_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.cart_total_box span:first-child {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.cart_total_precio {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+.cart_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cart_btn_vaciar {
+  background: transparent;
+  border: 0.1rem solid #f03939;
+  color: #f03939;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cart_btn_vaciar:hover {
+  background-color: #f03939;
+  color: #ffffff;
+}
+.cart_btn_pagar {
+  background-color: var(--brand-orange);
+  border: none;
+  color: #ffffff;
+  padding: 1.4rem;
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* --- MEDIA QUERY: DESDE 1024PX (ESCRITORIO) --- */
+@media (min-width: 1024px) {
+    .title-main { font-size: 2.8rem; }
+    .subtitulo { font-size: 2.4rem; }
+    
+    .card_cat {
+        padding: 2.5rem 2rem !important;
+    }
+}

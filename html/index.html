@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Atlantic City</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="contenedor">
+        <section class="inicioCard">
+            <div class="contenido">
+                <h1 class="titulo">Atlantic City</h1>
+                <p class="subtitulos">Inicia sesión para jugar</p>
+
+                <form class="formulario" action="/login" method="POST">
+                    
+                    <div class="campos">
+                        <label for="username">Usuario / Correo</label>
+                        <input type="text" id="username" name="username" autocomplete="username" placeholder="Introduce tu usuario" required>
+                    </div>
+
+                    <div class="campos">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" autocomplete="current-password" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="contraAyuda">
+                        <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="botonIngresar">Inicia Sesión</button>
+
+                </form>
+                
+                <div class="registro">
+                    <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+    document.querySelector('.formulario').addEventListener('submit', function(event) {
+        // 1. Detiene el envío real al servidor ficticio
+        event.preventDefault(); 
+        
+        // 2. Te redirecciona directamente a tu otro archivo HTML de la maqueta
+        window.location.href = "../html/pagInicio.html"; 
+    });
+</script>
+
+</body>
+</html>

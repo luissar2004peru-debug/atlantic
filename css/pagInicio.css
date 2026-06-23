@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+
+/* Base de 10px para cálculos REM directos */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #0c083c; 
+  min-height: 100vh;
+  margin: 0;
+  color: #F3F4F4; 
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.6rem; /* Mantiene el texto base general en 16px */
+}
+
+/* ============================================================
+   SECCIÓN PRINCIPAL (MOBILE FIRST)
+   ============================================================ */
+
+a {
+  text-decoration: none;
+}
+
+b {
+  font-family: "Elsie", serif;
+}
+
+.sizemas {
+  transition: 0.2s ease-in-out;
+}
+
+.sizemas:hover {
+  transform: scale(1.03);
+}
+
+.nav-item:hover {
+  text-shadow: #f3f4f4b8 0.2rem 0.2rem 1rem;
+}
+
+/* --- NAVBAR --- */
+.nav {
+  background-color: #0e0653 !important; 
+  border-bottom: 0.1rem solid #ffffff;
+  font-size: 1.6rem; 
+}
+
+.nav .navbar-brand {         
+  font-size: 2rem; 
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav .nav-link {
+  font-size: 1.6rem; 
+}
+
+.nav .btn {
+  font-size: 1.4rem; 
+  padding: 0.4rem 0.8rem;
+}
+
+/* --- MAIN LAYOUT (Mobile First con bordes balanceados) --- */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+  padding-top: 1.5rem; 
+  padding-left: 2.4rem;  /* Aumentado de 1.6rem a 2.4rem para dar más separación del borde */
+  padding-right: 2.4rem; /* Aumentado de 1.6rem a 2.4rem para dar más separación del borde */
+}
+
+/* --- HERO SECTION --- */
+.atlan {
+  position: relative;
+  height: 30rem; 
+  border-radius: 1.2rem; 
+  display: flex;
+  align-items: flex-end;
+  padding: 2.4rem; 
+  overflow: hidden;
+  width: 100%;
+}
+
+/* El degradado ahora cubre de manera absoluta y proporcional el fondo */
+.atlan::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 2; 
+  pointer-events: none;
+}
+
+.atlan_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Contenedor con escudo max-width para evitar deformaciones */
+.atlan_cont {
+  position: relative;
+  z-index: 3; 
+  width: 100%;
+  max-width: 55rem; 
+}
+
+.atlan_cont h1 {
+  color: #F3F4F4; 
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  font-size: 3.2rem; 
+  text-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.9);
+}
+
+.atlan_cont p {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #F3F4F4;
+}
+
+/* --- BOTÓN "CONÓCELO" --- */
+.boton {
+  text-decoration: none;
+  color: #F3F4F4;
+  box-sizing: border-box;
+  position: relative;
+  width: 16rem; 
+  height: 4.2rem; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 0.1rem solid #ffd700;
+  background-color: transparent; 
+  overflow: hidden;
+  margin-top: 1.6rem; 
+  border-radius: 0.6rem; 
+  transition: all 0.4s ease;
+}
+
+.boton .boton_text {
+  transform: translateX(2.5rem); 
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+}
+
+.boton .boton_icon {
+  position: absolute;
+  right: 0; 
+  height: 100%;
+  width: 4rem; 
+  background-color: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+}
+
+.boton .svg {
+  width: 2rem; 
+  fill: #061E29; 
+}
+
+.boton:hover {
+  box-shadow: 0 0 1.5rem rgba(217, 121, 48, 0.566);
+}
+
+.boton:hover .boton_icon {
+  width: 100%;
+}
+
+/* --- SIDEBAR & ITEMS (Corregido a 2 columnas en móvil) --- */
+.bar_lat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Fuerza dos columnas exactamente iguales en celular */
+  gap: 1.2rem; 
+  width: 100%;
+}
+
+.bar_card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem; 
+  padding: 1.2rem; 
+  border-radius: 0.8rem; 
+  background: #3003a0; 
+  transition: all 0.2s ease;
+  border-left: 0.3rem solid transparent;
+}
+
+.bar_card a {
+  display: flex;
+  flex-direction: column; /* Cambia a vertical en mobile para optimizar el espacio de las dos columnas */
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.bar_card img {
+  width: 5rem; 
+  height: 5rem; /* Ajustado a cuadrado proporcional para encajar mejor en la cuadrícula de dos columnas */
+  object-fit: cover;
+  border-radius: 0.4rem; 
+}
+
+.bar_card:hover {
+  background: #ffd700;
+  border-left: 0.3rem solid #f03939;
+}
+
+/* --- SUBTÍTULO (Alineado perfectamente con los nuevos bordes) --- */
+.sub_title {
+  /* Cambiado el margen izquierdo a 2.4rem para que empiece exactamente donde se alinean las tarjetas */
+  margin: 4rem 0rem 2rem 2.2rem; 
+  text-align: left;
+}
+
+.sub_title h2 {
+  font-size: 2.8rem; 
+  font-weight: 600;
+  color: #ffffff; 
+  letter-spacing: 0.1rem; 
+}
+
+/* --- ESTILOS DE LAS CARDS --- */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 45rem; 
+  height: 25rem; 
+  border-radius: 1.2rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  margin: 0rem 1.5rem auto;
+  border: none !important; 
+  background: transparent; 
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.card_cont {
+  position: absolute;
+  inset: 0;
+  padding: 2rem; 
+  background-color: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(1.2rem); 
+  -webkit-backdrop-filter: blur(1.2rem); 
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover .card_cont {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card_title {
+  margin: 0;
+  font-size: 2.2rem; 
+  color: #ffffff; 
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5); 
+}
+
+.card_text {
+  margin: 1rem 0 0; 
+  font-size: 1.4rem; 
+  color: #F3F4F4; 
+  font-weight: 600;
+  text-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   ESTILOS SECCIÓN NOSOTROS
+   ============================================================ */
+
+.nosotros {
+  margin-top: 6rem !important;
+  margin-bottom: 6rem !important;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.nosotros_titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #c4c4c4; 
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.nosotros_descripcion {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #ffffff; 
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.nosotros_img {
+  border-radius: 1.2rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  max-height: 30rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.testimonios_titulo {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #bbbaba; 
+  letter-spacing: 0.05rem;
+}
+
+.testimonio_card {
+  background-color: #3003a0; 
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.testimonio_card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.testimonio_estrellas {
+  color: #F08D39; 
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.testimonio_texto {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #F3F4F4;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonio_autor {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #F08D39;
+  text-transform: uppercase;
+}
+
+/* --- FOOTER --- */
+.pie_pagina {
+  background-color: #1a1a1a; 
+  color: #c9cccc; 
+  padding: 4rem 1.6rem 2rem 1.6rem; 
+  margin-top: 5rem; 
+  border-top: 0.1rem solid #333333;
+}
+
+.pie_contenedor {
+  display: flex;
+  flex-direction: column; 
+  gap: 3rem;
+}
+
+.pie_columna {
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.pie_columna h3 {
+  color: #F3F4F4; 
+  font-size: 1.8rem; 
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.pie_columna p {
+  font-size: 1.4rem; 
+  margin: 0;
+  line-height: 1.6;
+}
+
+.pie_redes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.pie_redes a {
+  color: #c9cccc;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.pie_redes a:hover {
+  color: #F08D39; 
+}
+
+.pie_reclamo {
+  color: #F08D39;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: underline !important;
+  transition: color 0.3s ease;
+}
+
+.pie_reclamo:hover {
+  color: #ffffff;
+}
+
+.pie_derechos {
+  text-align: center;
+  border-top: 0.1rem solid #333333;
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
+
+.pie_derechos p {
+  font-size: 1.2rem; 
+  color: #777777;
+  margin: 0;
+}
+
+/* ============================================================
+   ESTILOS DEL CARRITO LATERAL (Glass overlay + Fondo Blanco)
+   ============================================================ */
+
+/* Capa oscura/desenfocada trasera */
+.cart_overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.4rem);
+  z-index: 1040; /* Por debajo del sidebar pero sobre el contenido */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.cart_overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Sidebar lateral derecho */
+.cart_sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%; /* Por defecto ocupa todo en celulares pequeños */
+  max-width: 45rem; /* En pantallas grandes limita el tamaño a aprox un tercio */
+  background-color: #ffffff;
+  color: #151515;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.3);
+  
+  /* Estado inicial: Escondido completamente a la derecha */
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .cart_sidebar {
+    width: 33.333vh; /* Una tercera parte exacta del ancho horizontal visual */
+    min-width: 40rem;
+  }
+}
+
+.cart_sidebar.active {
+  transform: translateX(0);
+}
+
+/* Cabecera */
+.cart_header {
+  padding: 2rem;
+  border-bottom: 0.1rem solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart_header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+.cart_close_btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #777777;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.cart_close_btn:hover {
+  color: #f03939;
+}
+
+/* Cuerpo del Carrito (Scrollable) */
+.cart_body {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.cart_vacio_text {
+  font-size: 1.5rem;
+  color: #777777;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* Items individuales dentro del carrito */
+.cart_item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #f0f0f0;
+}
+.cart_item_img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  background-color: #f5f5f5;
+}
+.cart_item_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cart_item_name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #151515;
+  margin-bottom: 0.3rem;
+}
+.cart_item_price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3003a0;
+}
+.cart_item_remove {
+  background: none;
+  border: none;
+  color: #aaaaaa;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.cart_item_remove:hover {
+  color: #f03939;
+}
+
+/* Pie del Carrito */
+.cart_footer {
+  padding: 2rem;
+  border-top: 0.1rem solid #e5e5e5;
+  background-color: #fbfbfb;
+}
+.cart_total_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.cart_total_box span:first-child {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.cart_total_precio {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #151515;
+}
+.cart_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cart_btn_vaciar {
+  background: transparent;
+  border: 0.1rem solid #f03939;
+  color: #f03939;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cart_btn_vaciar:hover {
+  background-color: #f03939;
+  color: #ffffff;
+}
+.cart_btn_pagar {
+  background-color: #F08D39; /* Tu color corporativo naranja */
+  border: none;
+  color: #ffffff;
+  padding: 1.4rem;
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  transition: background 0.2s;
+}
+.cart_btn_pagar:hover {
+  background-color: #d97930;
+}
+
+/* --- DESKTOP (≥1024px) --- */
+@media (min-width: 1024px) {
+  .main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 4rem; 
+    padding-left: 0;  /* Desactiva paddings móviles en desktop para acoplarse al container */
+    padding-right: 0;
+  }
+
+  .atlan {
+    height: 48rem; 
+  }
+  
+  .atlan_cont h1 {
+    font-size: 5.2rem; 
+  }
+
+  .atlan_cont p {
+    font-size: 2rem; 
+    max-width: 100%; 
+  }
+
+  /* Retorna a una sola columna vertical cuando actúa como barra lateral de escritorio */
+  .bar_lat {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .bar_card a {
+    flex-direction: row; /* En PC los elementos internos vuelven a estar horizontales */
+    text-align: left;
+  }
+
+  .bar_card img {
+    width: 5.6rem; 
+    height: 8.64rem; 
+  }
+
+  .sub_title {
+    margin: 4rem 0rem 2rem 10.5rem; /* En PC se alinea perfectamente a la izquierda sin desfases */
+  }
+
+  .pie_contenedor {
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .pie_columna {
+    flex: 1; 
+  }
+}
